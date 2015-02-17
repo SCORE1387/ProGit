@@ -1,0 +1,44 @@
+Настройка git
+
+Имя пользователя:
+$ git config --global user.name "John Doe"
+$ git config --global user.email johndoe@example.com
+
+Выбор редактора:
+$ git config --global core.editor emacs
+
+Утилита сравнения:
+$ git config --global merge.tool vimdiff
+
+Проверка настроек:
+$ git config --list
+$ git config user.name
+
+
+Основы Git.
+
+Создание репозитория:
+$ git init
+
+Клонирование репозитория:
+$ git clone git://github.com/schacon/grit.git mygrit
+
+Добавление файлов в отслеживаемые (staged) - как новых, так и измененных:
+$ git add
+
+Отслеживание статуса:
+$ git status			-	список измененных файлов
+$ git diff				-	дополнительно diff для измененных файлов
+$ git diff --staged		-	diff для staged файлов
+
+.gitignore
+# комментарий — эта строка игнорируется
+*.a # не обрабатывать файлы, имя которых заканчивается на .a
+!lib.a # НО отслеживать файл lib.a, несмотря на то, что мы игнорируем все .a файлы с помощью предыдущего правила
+/TODO # игнорировать только файл TODO находящийся в корневом каталоге, не относится к файлам вида subdir/
+TODO
+build/ # игнорировать все файлы в каталоге build/
+doc/*.txt # игнорировать doc/notes.txt, но не doc/server/arch.txt
+
+Фиксация изменений:
+$ git commit -m "Commit message"
